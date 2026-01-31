@@ -191,8 +191,8 @@ const BuilderDetailPage = () => {
                     />
                   </div>
                   {/* Thumbnails */}
-                  <div className="grid grid-cols-3 gap-4">
-                    {builder.gallery.map((img, idx) => (
+                  <div className="grid grid-cols-4 gap-4">
+                    {builder.gallery.slice(0, 4).map((img, idx) => (
                       <button
                         key={idx}
                         onClick={() => setActiveGalleryIndex(idx)}
@@ -205,7 +205,7 @@ const BuilderDetailPage = () => {
                         <img
                           src={img}
                           alt={`${builder.name} gallery ${idx + 1}`}
-                          className="w-full h-24 md:h-32 object-cover"
+                          className="w-full h-24 md:h-28 object-cover"
                         />
                       </button>
                     ))}
