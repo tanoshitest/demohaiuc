@@ -95,27 +95,27 @@ export default function Header() {
             ))}
           </motion.div>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <motion.div
-            className="hidden lg:flex items-center gap-4"
+            className="hidden lg:flex items-center gap-3"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <a
-              href={`tel:${companyInfo.phone}`}
-              className={`flex items-center gap-2 text-sm font-medium ${
-                isScrolled || !isHomePage ? 'text-foreground' : 'text-primary-foreground'
-              }`}
-            >
-              <Phone className="w-4 h-4" />
-              {companyInfo.phone}
-            </a>
             <Button
               asChild
               className="bg-accent text-accent-foreground hover:bg-accent/90"
             >
-              <Link to="/contact">Get a Free Quote</Link>
+              <a href={`tel:${companyInfo.phone}`}>
+                <Phone className="w-4 h-4 mr-2" />
+                Call
+              </a>
+            </Button>
+            <Button
+              asChild
+              className="bg-accent text-accent-foreground hover:bg-accent/90"
+            >
+              <Link to="/contact">Contact</Link>
             </Button>
           </motion.div>
 
@@ -157,18 +157,20 @@ export default function Header() {
                   </Link>
                 ))}
                 <div className="pt-4 border-t border-border space-y-3">
-                  <a
-                    href={`tel:${companyInfo.phone}`}
-                    className="flex items-center gap-2 text-foreground font-medium"
-                  >
-                    <Phone className="w-4 h-4" />
-                    {companyInfo.phone}
-                  </a>
                   <Button
                     asChild
                     className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
                   >
-                    <Link to="/contact">Get a Free Quote</Link>
+                    <a href={`tel:${companyInfo.phone}`}>
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call
+                    </a>
+                  </Button>
+                  <Button
+                    asChild
+                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                  >
+                    <Link to="/contact">Contact</Link>
                   </Button>
                 </div>
               </div>
