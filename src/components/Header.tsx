@@ -1,22 +1,25 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { companyInfo } from '@/data/siteData';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About Us', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Builder Models', href: '#builders' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Blog', href: '#blog' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Builder Models', href: '/builder-models' },
+  { name: 'Gallery', href: '/gallery' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,18 +29,19 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  // Close mobile menu when route changes
+  useEffect(() => {
     setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  const isActiveLink = (href: string) => {
+    return location.pathname === href;
   };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || !isHomePage
           ? 'bg-card/95 backdrop-blur-md shadow-custom-lg'
           : 'bg-transparent'
       }`}
@@ -45,28 +49,27 @@ export default function Header() {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#home');
-            }}
-            className="flex items-center gap-2"
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-accent-foreground font-heading font-bold text-xl">TJ</span>
-            </div>
-            <span
-              className={`font-heading font-bold text-xl transition-colors ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground'
-              }`}
+            <Link
+              to="/"
+              className="flex items-center gap-2"
             >
-              {companyInfo.name}
-            </span>
-          </motion.a>
+              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+                <span className="text-accent-foreground font-heading font-bold text-xl">TJ</span>
+              </div>
+              <span
+                className={`font-heading font-bold text-xl transition-colors ${
+                  isScrolled || !isHomePage ? 'text-foreground' : 'text-primary-foreground'
+                }`}
+              >
+                {companyInfo.name}
+              </span>
+            </Link>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <motion.div
@@ -76,21 +79,19 @@ export default function Header() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(link.href);
-                }}
+                to={link.href}
                 className={`font-medium text-sm transition-colors link-underline ${
-                  isScrolled
+                  isActiveLink(link.href)
+                    ? 'text-accent'
+                    : isScrolled || !isHomePage
                     ? 'text-foreground hover:text-accent'
                     : 'text-primary-foreground/90 hover:text-primary-foreground'
                 }`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </motion.div>
 
@@ -104,17 +105,17 @@ export default function Header() {
             <a
               href={`tel:${companyInfo.phone}`}
               className={`flex items-center gap-2 text-sm font-medium ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground'
+                isScrolled || !isHomePage ? 'text-foreground' : 'text-primary-foreground'
               }`}
             >
               <Phone className="w-4 h-4" />
               {companyInfo.phone}
             </a>
             <Button
-              onClick={() => scrollToSection('#contact')}
+              asChild
               className="bg-accent text-accent-foreground hover:bg-accent/90"
             >
-              Get a Free Quote
+              <Link to="/contact">Get a Free Quote</Link>
             </Button>
           </motion.div>
 
@@ -125,9 +126,9 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`} />
+              <X className={`w-6 h-6 ${isScrolled || !isHomePage ? 'text-foreground' : 'text-primary-foreground'}`} />
             ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`} />
+              <Menu className={`w-6 h-6 ${isScrolled || !isHomePage ? 'text-foreground' : 'text-primary-foreground'}`} />
             )}
           </button>
         </div>
@@ -143,17 +144,17 @@ export default function Header() {
             >
               <div className="p-4 space-y-4">
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.name}
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(link.href);
-                    }}
-                    className="block text-foreground hover:text-accent font-medium py-2 transition-colors"
+                    to={link.href}
+                    className={`block font-medium py-2 transition-colors ${
+                      isActiveLink(link.href)
+                        ? 'text-accent'
+                        : 'text-foreground hover:text-accent'
+                    }`}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 ))}
                 <div className="pt-4 border-t border-border space-y-3">
                   <a
@@ -164,10 +165,10 @@ export default function Header() {
                     {companyInfo.phone}
                   </a>
                   <Button
-                    onClick={() => scrollToSection('#contact')}
+                    asChild
                     className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
                   >
-                    Get a Free Quote
+                    <Link to="/contact">Get a Free Quote</Link>
                   </Button>
                 </div>
               </div>

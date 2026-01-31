@@ -1,22 +1,23 @@
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { companyInfo } from '@/data/siteData';
 
 const footerLinks = {
   services: [
-    { name: 'Decking', href: '#services' },
-    { name: 'Home Renovations', href: '#services' },
-    { name: 'Kitchen Renovations', href: '#services' },
-    { name: 'Bathroom Renovations', href: '#services' },
-    { name: 'Laundry Renovations', href: '#services' },
-    { name: 'Pergola & Outdoor', href: '#services' },
+    { name: 'Decking', href: '/services' },
+    { name: 'Home Renovations', href: '/services' },
+    { name: 'Kitchen Renovations', href: '/services' },
+    { name: 'Bathroom Renovations', href: '/services' },
+    { name: 'Laundry Renovations', href: '/services' },
+    { name: 'Pergola & Outdoor', href: '/services' },
   ],
   company: [
-    { name: 'About Us', href: '#about' },
-    { name: 'Our Portfolio', href: '#gallery' },
-    { name: 'Builder Models', href: '#builders' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Our Portfolio', href: '/gallery' },
+    { name: 'Builder Models', href: '/builder-models' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
   ],
   legal: [
     { name: 'Privacy Policy', href: '#' },
@@ -36,15 +37,6 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToSection = (href: string) => {
-    if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
   return (
     <footer className="bg-foreground text-background">
       <div className="container-custom">
@@ -52,14 +44,14 @@ export default function Footer() {
         <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <a href="#home" className="flex items-center gap-2 mb-6">
+            <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
                 <span className="text-accent-foreground font-heading font-bold text-xl">TJ</span>
               </div>
               <span className="font-heading font-bold text-xl text-background">
                 {companyInfo.name}
               </span>
-            </a>
+            </Link>
             <p className="text-background/70 text-sm mb-6">
               Building quality homes and renovations across Australia for over 25 years. 
               Licensed, insured, and committed to excellence.
@@ -86,16 +78,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(link.href);
-                    }}
+                  <Link
+                    to={link.href}
                     className="text-background/70 hover:text-accent transition-colors text-sm"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -107,16 +95,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(link.href);
-                    }}
+                  <Link
+                    to={link.href}
                     className="text-background/70 hover:text-accent transition-colors text-sm"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
