@@ -44,10 +44,7 @@ export default function Footer() {
         <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-heading font-bold text-xl">TJ</span>
-              </div>
+            <Link to="/" className="inline-block mb-6">
               <span className="font-heading font-bold text-xl text-background">
                 {companyInfo.name}
               </span>
