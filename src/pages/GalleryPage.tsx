@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
+import PageBanner from '@/components/PageBanner';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { projects } from '@/data/siteData';
@@ -24,7 +25,8 @@ const GalleryPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-20">
+      <main>
+        <PageBanner />
         <section className="section-padding bg-background">
           <div className="container-custom">
             {/* Header */}

@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import PageBanner from '@/components/PageBanner';
 import Blog from '@/components/Blog';
 import Footer from '@/components/Footer';
 
@@ -6,7 +7,8 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-20">
+      <main>
+        <PageBanner />
         <Blog />
       </main>
       <Footer />

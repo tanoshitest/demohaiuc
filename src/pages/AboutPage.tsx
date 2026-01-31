@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import PageBanner from '@/components/PageBanner';
 import About from '@/components/About';
 import AboutCertifications from '@/components/AboutCertifications';
 import AboutProcess from '@/components/AboutProcess';
@@ -10,7 +11,8 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-20">
+      <main>
+        <PageBanner />
         <About />
         <AboutCertifications />
         <AboutProcess />
