@@ -56,13 +56,10 @@ export default function Header() {
           >
             <Link
               to="/"
-              className="flex items-center gap-2"
+              className="flex items-center"
             >
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-heading font-bold text-xl">TJ</span>
-              </div>
               <span
-                className={`font-heading font-bold text-xl transition-colors ${
+                className={`font-heading font-bold text-2xl transition-colors ${
                   isScrolled || !isHomePage ? 'text-foreground' : 'text-primary-foreground'
                 }`}
               >
