@@ -56,29 +56,6 @@ export default function Hero() {
             From concept to completion, we deliver exceptional quality that stands the test of time.
           </motion.p>
 
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <Button
-              size="lg"
-              onClick={() => scrollToSection('#gallery')}
-              className="bg-accent text-accent-foreground hover:bg-accent/90 group"
-            >
-              View Portfolio
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection('#contact')}
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-            >
-              Contact Us
-            </Button>
-          </motion.div>
 
           {/* Stats */}
           <motion.div
