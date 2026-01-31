@@ -28,7 +28,7 @@ export default function Gallery() {
             Our Portfolio
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
-            Our Masterpieces
+            Completed Items
           </h2>
           <p className="text-muted-foreground text-lg">
             Explore our collection of completed projects showcasing our commitment to 
