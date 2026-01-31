@@ -42,9 +42,6 @@ const BuilderDetailPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="inline-block bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-medium mb-4">
-                  {builder.price}
-                </span>
                 <h1 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground mb-4">
                   {builder.name}
                 </h1>
@@ -227,10 +224,6 @@ const BuilderDetailPage = () => {
                     Quick Specs
                   </h4>
                   <div className="space-y-3 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Starting Price</span>
-                      <span className="font-semibold text-foreground">{builder.price}</span>
-                    </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">Size</span>
                       <span className="font-semibold text-foreground">{builder.size}</span>
