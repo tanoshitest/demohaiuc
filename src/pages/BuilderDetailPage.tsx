@@ -1,16 +1,28 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ChevronLeft, Bed, Bath as BathIcon, Car, Home, ArrowRight } from 'lucide-react';
+import { ChevronLeft, Bed, Bath as BathIcon, Car, Home, ArrowRight, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { builderTypes } from '@/data/siteData';
-
 const BuilderDetailPage = () => {
   const { builderId } = useParams();
   const builder = builderTypes.find((b) => b.id === builderId);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const [activeFloorPlanIndex, setActiveFloorPlanIndex] = useState(0);
+
+  const nextFloorPlan = () => {
+    if (builder) {
+      setActiveFloorPlanIndex((prev) => (prev + 1) % builder.floorPlans.length);
+    }
+  };
+
+  const prevFloorPlan = () => {
+    if (builder) {
+      setActiveFloorPlanIndex((prev) => (prev - 1 + builder.floorPlans.length) % builder.floorPlans.length);
+    }
+  };
 
   if (!builder) {
     return <Navigate to="/builder-models" replace />;
@@ -116,12 +128,47 @@ const BuilderDetailPage = () => {
                 <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
                   Floor Plan
                 </h2>
-                <div className="bg-secondary rounded-2xl p-6">
-                  <img
-                    src={builder.floorPlan}
-                    alt={`${builder.name} floor plan`}
-                    className="w-full max-h-[500px] object-contain"
-                  />
+                <div className="relative group">
+                  {/* Main Image */}
+                  <div className="rounded-2xl overflow-hidden">
+                    <img
+                      src={builder.floorPlans[activeFloorPlanIndex]}
+                      alt={`${builder.name} floor plan ${activeFloorPlanIndex + 1}`}
+                      className="w-full h-[450px] object-cover"
+                    />
+                  </div>
+                  
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={prevFloorPlan}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+                    aria-label="Previous floor plan"
+                  >
+                    <ChevronLeft className="w-5 h-5 text-foreground" />
+                  </button>
+                  <button
+                    onClick={nextFloorPlan}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+                    aria-label="Next floor plan"
+                  >
+                    <ChevronRight className="w-5 h-5 text-foreground" />
+                  </button>
+
+                  {/* Dots Indicator */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    {builder.floorPlans.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveFloorPlanIndex(idx)}
+                        className={`w-2.5 h-2.5 rounded-full transition-all ${
+                          idx === activeFloorPlanIndex
+                            ? 'bg-accent w-6'
+                            : 'bg-background/60 hover:bg-background/80'
+                        }`}
+                        aria-label={`Go to floor plan ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </motion.section>
 
