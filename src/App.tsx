@@ -13,6 +13,7 @@ import BuilderDetailPage from "./pages/BuilderDetailPage";
 import GalleryPage from "./pages/GalleryPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import BlogPage from "./pages/BlogPage";
+import BlogDetailPage from "./pages/BlogDetailPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/gallery/:projectId" element={<ProjectDetailPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:blogId" element={<BlogDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

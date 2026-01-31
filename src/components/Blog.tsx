@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
 import { blogPosts } from '@/data/siteData';
@@ -76,9 +77,11 @@ export default function Blog() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-heading font-bold text-lg text-foreground mb-3 line-clamp-2 group-hover:text-accent transition-colors">
-                  {post.title}
-                </h3>
+                <Link to={`/blog/${post.id}`}>
+                  <h3 className="font-heading font-bold text-lg text-foreground mb-3 line-clamp-2 group-hover:text-accent transition-colors">
+                    {post.title}
+                  </h3>
+                </Link>
 
                 {/* Excerpt */}
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
@@ -93,13 +96,13 @@ export default function Blog() {
                     </div>
                     <span className="text-sm font-medium text-foreground">{post.author}</span>
                   </div>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/blog/${post.id}`}
                     className="inline-flex items-center gap-1 text-accent font-semibold text-sm group/link"
                   >
                     Read More
                     <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.article>
