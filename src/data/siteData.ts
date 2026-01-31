@@ -82,7 +82,7 @@ export const services = [
 export const builderTypes = [
   {
     id: 'house',
-    name: 'Family House',
+    name: 'House',
     description: 'Our signature family homes are designed for modern Australian living. Featuring open-plan layouts, seamless indoor-outdoor flow, and premium finishes throughout. Perfect for growing families seeking quality and comfort in established suburbs.',
     image: builderHouseImg,
     specs: { beds: 4, baths: 2, cars: 2 },
@@ -134,7 +134,7 @@ export const builderTypes = [
   },
   {
     id: 'second-home',
-    name: 'Second Dwelling',
+    name: 'Second Homes',
     description: 'Maximise your property\'s potential with a detached second dwelling. Ideal for rental income, multigenerational living, or a private home office. Fully self-contained with premium finishes.',
     image: builderSecondImg,
     specs: { beds: 2, baths: 1, cars: 1 },
