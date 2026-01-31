@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { CheckCircle2, Award, Users, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { CheckCircle2, Award, Users, Clock, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { companyInfo, aboutTeamImage } from '@/data/siteData';
 
 const features = [
@@ -106,7 +108,7 @@ export default function About() {
             </div>
 
             {/* Certifications */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mb-8">
               {['HIA Member', 'Master Builders', 'Green Building Council'].map((cert) => (
                 <div
                   key={cert}
@@ -117,6 +119,14 @@ export default function About() {
                 </div>
               ))}
             </div>
+
+            {/* View More Button */}
+            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 group">
+              <Link to="/about">
+                View More
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
           </motion.div>
         </div>
       </div>
