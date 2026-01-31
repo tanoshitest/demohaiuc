@@ -266,12 +266,12 @@ export const faqItems = [
 ];
 
 export const companyInfo = {
-  name: 'Triple J Home',
+  name: 'Triple J Homes',
   tagline: 'Building Your Dream Home Across Australia',
-  description: 'With over 25 years of experience in the Australian construction industry, Triple J Home has built a reputation for quality craftsmanship, transparent communication, and exceptional results.',
-  phone: '1300 TRIPLE J',
-  email: 'info@triplejhome.com.au',
-  address: '123 Construction Drive, Chatswood, NSW 2067',
+  description: 'With over 25 years of experience in the Australian construction industry, Triple J Homes has built a reputation for quality craftsmanship, transparent communication, and exceptional results.',
+  phone: '0411 766 848 - JN (VAN)',
+  email: 'triplejhomes2000@gmail.com',
+  address: 'Neale Street, Springvale, Victoria 3171',
   hours: 'Monday - Friday: 7:00 AM - 5:00 PM',
   social: {
     facebook: 'https://facebook.com/triplejhome',
