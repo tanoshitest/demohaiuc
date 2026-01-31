@@ -63,7 +63,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-primary" ref={ref}>
+    <section id="contact" className="py-12 md:py-16 bg-primary" ref={ref}>
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side - Info */}
