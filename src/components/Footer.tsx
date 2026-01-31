@@ -1,21 +1,20 @@
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin, ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { companyInfo } from '@/data/siteData';
+import { companyInfo, builderTypes } from '@/data/siteData';
 
 const footerLinks = {
   services: [
-    { name: 'Decking', href: '/services' },
-    { name: 'Home Renovations', href: '/services' },
-    { name: 'Kitchen Renovations', href: '/services' },
-    { name: 'Bathroom Renovations', href: '/services' },
-    { name: 'Laundry Renovations', href: '/services' },
-    { name: 'Pergola & Outdoor', href: '/services' },
+    { name: 'Decking', href: '/services/decking' },
+    { name: 'Home Renovations', href: '/services/home-renovations' },
+    { name: 'Kitchen Renovations', href: '/services/kitchen-renovations' },
+    { name: 'Bathroom Renovations', href: '/services/bathroom-renovations' },
+    { name: 'Laundry Renovations', href: '/services/laundry-renovations' },
+    { name: 'Pergola & Outdoor', href: '/services/pergola' },
   ],
   company: [
     { name: 'About Us', href: '/about' },
     { name: 'Our Portfolio', href: '/gallery' },
-    { name: 'Builder Models', href: '/builder-models' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ],
@@ -41,7 +40,7 @@ export default function Footer() {
     <footer className="bg-foreground text-background">
       <div className="container-custom">
         {/* Main Footer */}
-        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
@@ -86,6 +85,23 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Builder Models Links */}
+          <div>
+            <h3 className="font-heading font-semibold text-background mb-6">Builder Models</h3>
+            <ul className="space-y-3">
+              {builderTypes.map((builder) => (
+                <li key={builder.id}>
+                  <Link
+                    to={`/builder-models/${builder.id}`}
+                    className="text-background/70 hover:text-accent transition-colors text-sm"
+                  >
+                    {builder.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Company Links */}
           <div>
             <h3 className="font-heading font-semibold text-background mb-6">Company</h3>
@@ -109,7 +125,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-background/70">
               <li>{companyInfo.address}</li>
               <li>
-                <a href={`tel:${companyInfo.phone}`} className="hover:text-accent transition-colors">
+                <a href={`tel:${companyInfo.phone.split(' - ')[0].replace(/\s/g, '')}`} className="hover:text-accent transition-colors">
                   {companyInfo.phone}
                 </a>
               </li>
