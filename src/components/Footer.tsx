@@ -85,9 +85,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Builder Models Links */}
+          {/* Builder Type Links */}
           <div>
-            <h3 className="font-heading font-semibold text-background mb-6">Builder Models</h3>
+            <h3 className="font-heading font-semibold text-background mb-6">Builder Type</h3>
             <ul className="space-y-3">
               {builderTypes.map((builder) => (
                 <li key={builder.id}>
