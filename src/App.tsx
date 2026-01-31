@@ -9,6 +9,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
 import BuilderModelsPage from "./pages/BuilderModelsPage";
 import GalleryPage from "./pages/GalleryPage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
 import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
           <Route path="/builder-models" element={<BuilderModelsPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/gallery/:projectId" element={<ProjectDetailPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
