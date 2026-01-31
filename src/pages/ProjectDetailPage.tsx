@@ -182,7 +182,7 @@ const ProjectDetailPage = () => {
                 <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                   <Link to="/contact">Get a Free Quote</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                   <Link to="/gallery">View More Projects</Link>
                 </Button>
               </div>
