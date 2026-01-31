@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight } from 'lucide-react';
@@ -8,9 +8,8 @@ import { projects } from '@/data/siteData';
 export default function Gallery() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [showAll, setShowAll] = useState(false);
 
-  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+  const displayedProjects = projects.slice(0, 3);
 
   return (
     <section id="gallery" className="section-padding bg-background" ref={ref}>
@@ -85,25 +84,24 @@ export default function Gallery() {
           </AnimatePresence>
         </div>
 
-        {/* View All Button */}
-        {!showAll && projects.length > 3 && (
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
+        {/* View More Button */}
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Button
+            asChild
+            size="lg"
+            className="bg-accent text-accent-foreground hover:bg-accent/90 group"
           >
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => setShowAll(true)}
-              className="group"
-            >
-              View All Projects
+            <Link to="/gallery">
+              View More
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </motion.div>
-        )}
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
