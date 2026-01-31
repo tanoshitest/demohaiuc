@@ -22,7 +22,7 @@ export default function Gallery() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
-            Our Portfolio
+            Completed Items
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
             Completed Items
