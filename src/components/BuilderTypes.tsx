@@ -1,7 +1,7 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Bed, Bath as BathIcon, Car, ArrowRight } from 'lucide-react';
+import { Bed, Bath as BathIcon, Car, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { builderTypes } from '@/data/siteData';
 
@@ -10,13 +10,14 @@ export default function BuilderTypes() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % builderTypes.length);
-  };
+  // Auto-scroll effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % builderTypes.length);
+    }, 4000); // Change slide every 4 seconds
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + builderTypes.length) % builderTypes.length);
-  };
+    return () => clearInterval(interval);
+  }, []);
 
   const visibleBuilders = () => {
     const items = [];
@@ -51,21 +52,6 @@ export default function BuilderTypes() {
 
         {/* Carousel */}
         <div className="relative">
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-card rounded-full shadow-custom-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-card rounded-full shadow-custom-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
 
           {/* Cards Container */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-8">
