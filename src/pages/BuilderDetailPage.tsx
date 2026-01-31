@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ChevronLeft, Bed, Bath as BathIcon, Car, Home, ArrowRight, ChevronRight, Phone } from 'lucide-react';
+import { ChevronLeft, Bed, Bath as BathIcon, Car, Home, ArrowRight, Phone } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -10,19 +10,6 @@ const BuilderDetailPage = () => {
   const { builderId } = useParams();
   const builder = builderTypes.find((b) => b.id === builderId);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
-  const [activeFloorPlanIndex, setActiveFloorPlanIndex] = useState(0);
-
-  const nextFloorPlan = () => {
-    if (builder) {
-      setActiveFloorPlanIndex((prev) => (prev + 1) % builder.floorPlans.length);
-    }
-  };
-
-  const prevFloorPlan = () => {
-    if (builder) {
-      setActiveFloorPlanIndex((prev) => (prev - 1 + builder.floorPlans.length) % builder.floorPlans.length);
-    }
-  };
 
   if (!builder) {
     return <Navigate to="/builder-models" replace />;
@@ -188,57 +175,7 @@ const BuilderDetailPage = () => {
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="sticky top-28 space-y-6">
-                {/* Floor Plan */}
-                <motion.section
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                >
-                  <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
-                    Floor Plan
-                  </h2>
-                  <div className="relative group">
-                    <div className="rounded-2xl overflow-hidden">
-                      <img
-                        src={builder.floorPlans[activeFloorPlanIndex]}
-                        alt={`${builder.name} floor plan ${activeFloorPlanIndex + 1}`}
-                        className="w-full h-[300px] object-cover"
-                      />
-                    </div>
-                    
-                    <button
-                      onClick={prevFloorPlan}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
-                      aria-label="Previous floor plan"
-                    >
-                      <ChevronLeft className="w-5 h-5 text-foreground" />
-                    </button>
-                    <button
-                      onClick={nextFloorPlan}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
-                      aria-label="Next floor plan"
-                    >
-                      <ChevronRight className="w-5 h-5 text-foreground" />
-                    </button>
-
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                      {builder.floorPlans.map((_, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setActiveFloorPlanIndex(idx)}
-                          className={`w-2.5 h-2.5 rounded-full transition-all ${
-                            idx === activeFloorPlanIndex
-                              ? 'bg-accent w-6'
-                              : 'bg-background/60 hover:bg-background/80'
-                          }`}
-                          aria-label={`Go to floor plan ${idx + 1}`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </motion.section>
-
+            <div className="sticky top-28 space-y-6">
                 <motion.div
                   className="bg-card rounded-2xl p-6 shadow-custom-lg"
                   initial={{ opacity: 0, x: 20 }}
