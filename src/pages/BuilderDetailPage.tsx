@@ -141,7 +141,7 @@ const BuilderDetailPage = () => {
                           <img
                             src={img}
                             alt={`${builder.name} gallery ${idx + 1}`}
-                            className="w-full h-24 md:h-28 object-cover"
+                            className="w-full aspect-square md:aspect-auto md:h-28 object-cover"
                           />
                         </button>
                       ))}
