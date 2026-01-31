@@ -1,5 +1,5 @@
 import Header from '@/components/Header';
-import BuilderTypes from '@/components/BuilderTypes';
+import BuilderTypesGrid from '@/components/BuilderTypesGrid';
 import Footer from '@/components/Footer';
 
 const BuilderModelsPage = () => {
@@ -7,7 +7,7 @@ const BuilderModelsPage = () => {
     <div className="min-h-screen">
       <Header />
       <main className="pt-20">
-        <BuilderTypes />
+        <BuilderTypesGrid />
       </main>
       <Footer />
     </div>
