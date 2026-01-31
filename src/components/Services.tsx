@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, TreeDeciduous, Home, ChefHat, Bath, WashingMachine, Fence } from 'lucide-react';
 import { services } from '@/data/siteData';
 
@@ -88,13 +89,13 @@ export default function Services() {
                   </div>
 
                   {/* Learn More Link */}
-                  <a
-                    href="#contact"
+                  <Link
+                    to={`/services/${service.id}`}
                     className="inline-flex items-center gap-2 text-accent font-semibold text-sm group/link"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             );
