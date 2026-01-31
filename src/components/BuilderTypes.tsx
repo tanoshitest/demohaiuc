@@ -145,6 +145,16 @@ export default function BuilderTypes() {
               />
             ))}
           </div>
+
+          {/* View All Button */}
+          <div className="flex justify-center mt-10">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 group">
+              <Link to="/builder-models">
+                View All Models
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
