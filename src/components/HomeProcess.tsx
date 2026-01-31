@@ -59,9 +59,9 @@ export default function HomeProcess() {
 
         <div className="flex flex-nowrap justify-center items-center gap-2 lg:gap-4 mb-12 overflow-x-auto pb-4">
           {processSteps.map((item, index) => (
-            <div key={item.title} className="flex items-center flex-shrink-0">
+            <div key={item.title} className="flex items-stretch flex-shrink-0">
               <motion.div
-                className="bg-card rounded-2xl p-4 lg:p-6 text-center shadow-custom-md hover:shadow-custom-lg transition-shadow w-[160px] lg:w-[180px]"
+                className="bg-card rounded-2xl p-4 lg:p-6 text-center shadow-custom-md hover:shadow-custom-lg transition-shadow w-[160px] lg:w-[180px] h-[220px] lg:h-[240px] flex flex-col justify-start"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
