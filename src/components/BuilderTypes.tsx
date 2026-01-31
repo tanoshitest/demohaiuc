@@ -86,11 +86,6 @@ export default function BuilderTypes() {
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
-                    
-                    {/* Price Badge */}
-                    <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
-                      {builder.price}
-                    </div>
                   </div>
                 </Link>
 
