@@ -7,27 +7,27 @@ const processSteps = [
   {
     icon: MessageSquare,
     title: 'Consultation',
-    description: 'We meet to discuss your vision, requirements, budget, and timeline. This free consultation helps us understand exactly what you want to achieve.',
+    description: 'Free initial meeting to discuss your vision and requirements.',
   },
   {
     icon: PenTool,
-    title: 'Design & Planning',
-    description: 'Our team creates detailed designs and 3D visualisations. We work with you to refine every detail until it\'s perfect.',
+    title: 'Design',
+    description: 'Detailed designs and 3D visualisations tailored to you.',
   },
   {
     icon: FileCheck,
-    title: 'Approvals & Contracts',
-    description: 'We handle all council approvals, permits, and documentation. You\'ll receive a transparent fixed-price contract with no hidden costs.',
+    title: 'Approvals',
+    description: 'We handle all council permits and documentation.',
   },
   {
     icon: Hammer,
     title: 'Construction',
-    description: 'Our skilled tradespeople bring your project to life with regular progress updates. Quality craftsmanship is our priority at every stage.',
+    description: 'Quality craftsmanship with regular progress updates.',
   },
   {
     icon: KeyRound,
     title: 'Handover',
-    description: 'After final inspections and your approval, we hand over the keys to your completed project with full warranty documentation.',
+    description: 'Final inspections and keys to your completed project.',
   },
 ];
 
@@ -51,11 +51,11 @@ export default function AboutProcess() {
             Our Process
           </h2>
           <p className="text-muted-foreground text-lg">
-            From initial consultation to final handover, we follow a proven 5-step process to deliver exceptional results.
+            A simple 5-step journey from your initial idea to your dream home.
           </p>
         </motion.div>
 
-        <div className="flex flex-nowrap justify-center items-start gap-2 lg:gap-4 overflow-x-auto pb-4">
+        <div className="flex flex-nowrap justify-center items-stretch gap-2 lg:gap-4 overflow-x-auto pb-4">
           {processSteps.map((item, index) => (
             <div key={item.title} className="flex items-stretch flex-shrink-0">
               <motion.div
@@ -80,7 +80,7 @@ export default function AboutProcess() {
               {/* Arrow between steps */}
               {index < processSteps.length - 1 && (
                 <motion.div
-                  className="hidden lg:flex items-center justify-center mx-2 mt-16"
+                  className="hidden lg:flex items-center justify-center mx-2"
                   initial={{ opacity: 0, x: -10 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
