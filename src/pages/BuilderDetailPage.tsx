@@ -119,68 +119,71 @@ const BuilderDetailPage = () => {
                 </div>
               </motion.section>
 
-              {/* Photo Gallery */}
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
-                  Photo Gallery
-                </h2>
-                <div className="space-y-4">
-                  {/* Main Image */}
-                  <div className="rounded-2xl overflow-hidden">
-                    <img
-                      src={builder.gallery[activeGalleryIndex]}
-                      alt={`${builder.name} gallery`}
-                      className="w-full h-[400px] object-cover"
+              {/* Gallery & Video - swap order on mobile */}
+              <div className="flex flex-col-reverse lg:flex-col gap-12">
+                {/* Photo Gallery */}
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
+                    Photo Gallery
+                  </h2>
+                  <div className="space-y-4">
+                    {/* Main Image */}
+                    <div className="rounded-2xl overflow-hidden">
+                      <img
+                        src={builder.gallery[activeGalleryIndex]}
+                        alt={`${builder.name} gallery`}
+                        className="w-full h-[400px] object-cover"
+                      />
+                    </div>
+                    {/* Thumbnails */}
+                    <div className="grid grid-cols-4 gap-4">
+                      {builder.gallery.slice(0, 4).map((img, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setActiveGalleryIndex(idx)}
+                          className={`rounded-xl overflow-hidden transition-all ${
+                            idx === activeGalleryIndex
+                              ? 'ring-4 ring-accent'
+                              : 'opacity-70 hover:opacity-100'
+                          }`}
+                        >
+                          <img
+                            src={img}
+                            alt={`${builder.name} gallery ${idx + 1}`}
+                            className="w-full h-24 md:h-28 object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </motion.section>
+
+                {/* Video */}
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
+                    Video Tour
+                  </h2>
+                  <div className="rounded-2xl overflow-hidden aspect-video">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={`https://www.youtube.com/embed/${builder.videoId}`}
+                      title={`${builder.name} Video Tour`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="border-0"
                     />
                   </div>
-                  {/* Thumbnails */}
-                  <div className="grid grid-cols-4 gap-4">
-                    {builder.gallery.slice(0, 4).map((img, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setActiveGalleryIndex(idx)}
-                        className={`rounded-xl overflow-hidden transition-all ${
-                          idx === activeGalleryIndex
-                            ? 'ring-4 ring-accent'
-                            : 'opacity-70 hover:opacity-100'
-                        }`}
-                      >
-                        <img
-                          src={img}
-                          alt={`${builder.name} gallery ${idx + 1}`}
-                          className="w-full h-24 md:h-28 object-cover"
-                        />
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </motion.section>
-
-              {/* Video */}
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
-                  Video Tour
-                </h2>
-                <div className="rounded-2xl overflow-hidden aspect-video">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube.com/embed/${builder.videoId}`}
-                    title={`${builder.name} Video Tour`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="border-0"
-                  />
-                </div>
-              </motion.section>
+                </motion.section>
+              </div>
             </div>
 
             {/* Sidebar */}
