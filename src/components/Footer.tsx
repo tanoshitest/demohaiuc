@@ -40,7 +40,7 @@ export default function Footer() {
     <footer className="bg-foreground text-background">
       <div className="container-custom">
         {/* Main Footer */}
-        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_1.5fr] gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
