@@ -16,7 +16,7 @@ const FloatingCTA = () => {
   const whatsappNumber = '61411766848'; // Australian format for WhatsApp
 
   return (
-    <div className="fixed bottom-[420px] right-6 flex flex-col gap-3 z-50">
+    <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
       {/* WhatsApp Button */}
       <a
         href={`https://wa.me/${whatsappNumber}`}
