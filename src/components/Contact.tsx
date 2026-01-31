@@ -65,7 +65,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding bg-primary" ref={ref}>
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side - Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
