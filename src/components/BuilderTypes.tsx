@@ -38,7 +38,7 @@ export default function BuilderTypes() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
-            Builder Models
+            Builder Type
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
             Choose Your Dream Home
@@ -150,7 +150,7 @@ export default function BuilderTypes() {
           <div className="flex justify-center mt-10">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 group">
               <Link to="/builder-models">
-                View All Models
+                View All
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>

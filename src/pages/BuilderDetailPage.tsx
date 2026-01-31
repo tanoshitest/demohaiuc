@@ -35,7 +35,7 @@ const BuilderDetailPage = () => {
                 className="inline-flex items-center text-primary-foreground/80 hover:text-accent transition-colors mb-4"
               >
                 <ChevronLeft className="w-4 h-4 mr-1" />
-                Back to Builder Models
+                Back to Builder Type
               </Link>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
