@@ -6,6 +6,16 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { services } from '@/data/siteData';
 
+// Import gallery images
+import deckingImg from '@/assets/decking.jpg';
+import homeRenoImg from '@/assets/home-reno.jpg';
+import kitchenRenoImg from '@/assets/kitchen-reno.jpg';
+import bathroomRenoImg from '@/assets/bathroom-reno.jpg';
+import laundryRenoImg from '@/assets/laundry-reno.jpg';
+import pergolaImg from '@/assets/pergola.jpg';
+import projectBondiImg from '@/assets/project-bondi.jpg';
+import projectMosmanImg from '@/assets/project-mosman.jpg';
+
 const iconMap: { [key: string]: React.ElementType } = {
   TreeDeciduous,
   Home,
@@ -21,6 +31,7 @@ const serviceDetails: { [key: string]: {
   benefits: string[];
   timeline: string;
   priceRange: string;
+  gallery: string[];
 }} = {
   'decking': {
     fullDescription: 'Transform your outdoor living with our premium hardwood and composite decking solutions designed specifically for Australian climates. Our expert team specialises in creating stunning outdoor spaces that seamlessly extend your indoor living areas, perfect for entertaining or relaxing with family.',
@@ -41,7 +52,8 @@ const serviceDetails: { [key: string]: {
       'Expert advice on ongoing maintenance'
     ],
     timeline: '2-4 weeks',
-    priceRange: 'From $350 per sqm'
+    priceRange: 'From $350 per sqm',
+    gallery: [deckingImg, pergolaImg, projectBondiImg, homeRenoImg]
   },
   'home-renovations': {
     fullDescription: 'Complete home transformations from design to completion. We breathe new life into established homes across Sydney and Melbourne, handling everything from initial concept through to final handover. Our experienced project managers ensure your renovation runs smoothly while minimising disruption to your daily life.',
@@ -62,7 +74,8 @@ const serviceDetails: { [key: string]: {
       'Defects liability period for peace of mind'
     ],
     timeline: '12-24 weeks depending on scope',
-    priceRange: 'From $150,000'
+    priceRange: 'From $150,000',
+    gallery: [homeRenoImg, kitchenRenoImg, bathroomRenoImg, projectMosmanImg]
   },
   'kitchen-renovations': {
     fullDescription: 'Create the heart of your home with custom cabinetry, premium benchtops, and modern appliance integration. Our kitchen renovation specialists work with you to design functional, beautiful spaces that reflect your lifestyle and add significant value to your property.',
@@ -83,7 +96,8 @@ const serviceDetails: { [key: string]: {
       'Full electrical and plumbing upgrades included'
     ],
     timeline: '4-8 weeks',
-    priceRange: 'From $35,000'
+    priceRange: 'From $35,000',
+    gallery: [kitchenRenoImg, homeRenoImg, projectBondiImg, bathroomRenoImg]
   },
   'bathroom-renovations': {
     fullDescription: 'Luxury bathroom designs featuring floor-to-ceiling tiles, frameless showers, and statement fixtures. Whether you\'re looking for a spa-like retreat or a practical family bathroom, our team delivers stunning results that combine form and function perfectly.',
@@ -104,7 +118,8 @@ const serviceDetails: { [key: string]: {
       'LED lighting and smart mirrors available'
     ],
     timeline: '3-6 weeks',
-    priceRange: 'From $25,000'
+    priceRange: 'From $25,000',
+    gallery: [bathroomRenoImg, kitchenRenoImg, laundryRenoImg, homeRenoImg]
   },
   'laundry-renovations': {
     fullDescription: 'Maximise functionality with clever storage solutions, quality cabinetry, and efficient layouts. A well-designed laundry makes daily tasks easier while adding value to your home. We create practical spaces that work hard without compromising on style.',
@@ -125,7 +140,8 @@ const serviceDetails: { [key: string]: {
       'Coordination with existing home design'
     ],
     timeline: '1-2 weeks',
-    priceRange: 'From $12,000'
+    priceRange: 'From $12,000',
+    gallery: [laundryRenoImg, bathroomRenoImg, kitchenRenoImg, homeRenoImg]
   },
   'pergola': {
     fullDescription: 'Extend your living space with stunning pergolas, patios, and alfresco entertainment areas built to last. Our outdoor structures are engineered to withstand Australian conditions while providing beautiful spaces for year-round enjoyment.',
@@ -146,7 +162,8 @@ const serviceDetails: { [key: string]: {
       'Compliant with Australian building standards'
     ],
     timeline: '2-4 weeks',
-    priceRange: 'From $15,000'
+    priceRange: 'From $15,000',
+    gallery: [pergolaImg, deckingImg, projectMosmanImg, homeRenoImg]
   }
 };
 
@@ -235,6 +252,28 @@ const ServiceDetailPage = () => {
                   <p className="text-muted-foreground text-lg leading-relaxed">
                     {details.fullDescription}
                   </p>
+                </motion.div>
+
+                {/* Gallery Images - 4 in a row */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.15 }}
+                >
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {details.gallery.map((image, index) => (
+                      <div
+                        key={index}
+                        className="aspect-square rounded-xl overflow-hidden shadow-custom-md group"
+                      >
+                        <img
+                          src={image}
+                          alt={`${service.title} - Image ${index + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </motion.div>
 
                 {/* Process */}
