@@ -55,21 +55,21 @@ export default function AboutProcess() {
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center items-start gap-4">
+        <div className="flex flex-nowrap justify-center items-start gap-2 lg:gap-4 overflow-x-auto pb-4">
           {processSteps.map((item, index) => (
-            <div key={item.title} className="flex items-start">
+            <div key={item.title} className="flex items-start flex-shrink-0">
               <motion.div
-                className="bg-card rounded-2xl p-6 text-center shadow-custom-md hover:shadow-custom-lg transition-shadow w-[200px] lg:w-[220px]"
+                className="bg-card rounded-2xl p-4 lg:p-6 text-center shadow-custom-md hover:shadow-custom-lg transition-shadow w-[160px] lg:w-[180px]"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Icon */}
-                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-8 h-8 text-accent" />
+                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-3 lg:mb-4">
+                  <item.icon className="w-6 h-6 lg:w-8 lg:h-8 text-accent" />
                 </div>
 
-                <h3 className="font-heading font-bold text-lg text-foreground mb-2">
+                <h3 className="font-heading font-bold text-base lg:text-lg text-foreground mb-2">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground text-sm">
