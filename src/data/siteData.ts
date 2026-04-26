@@ -99,7 +99,7 @@ export const builderTypes = [
     price: 'From $650,000',
     gallery: [houseHero, houseOverview, homeRenoImg, kitchenRenoImg, bathroomRenoImg, laundryRenoImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
-    videoId: 'dQw4w9WgXcQ',
+    videoId: 'Kx2fQFA6uis',
     features: ['Open Plan Living', 'Alfresco Area', 'Walk-in Pantry', 'Master Ensuite', 'Double Garage'],
     detailedSpecs: {
       "Structure": "Reinforced concrete slab, timber frame",
@@ -127,7 +127,7 @@ export const builderTypes = [
     price: 'From $950,000',
     gallery: [customHero, customOverview, projectMosmanImg, projectBondiImg, kitchenRenoImg, bathroomRenoImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
-    videoId: 'dQw4w9WgXcQ',
+    videoId: '4fYBLzn9aM4',
     features: ['Architect Designed', 'Premium Finishes', 'Home Automation', 'Pool Integration', 'Wine Cellar'],
     detailedSpecs: {
       "Design": "Full architectural service included",
@@ -155,7 +155,7 @@ export const builderTypes = [
     price: 'From $450,000',
     gallery: [townhouseHero, townhouseOverview, bathroomRenoImg, homeRenoImg, kitchenRenoImg, laundryRenoImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
-    videoId: 'dQw4w9WgXcQ',
+    videoId: '8Fr9a7MDHOU',
     features: ['Multi-Level Living', 'Rooftop Terrace', 'Study Nook', 'Private Courtyard', 'Secure Parking'],
     detailedSpecs: {
       "Layout": "Optimized multi-level design",
@@ -183,7 +183,7 @@ export const builderTypes = [
     price: 'From $380,000',
     gallery: [bungalowHero, bungalowOverview, homeRenoImg, laundryRenoImg, kitchenRenoImg, pergolaImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
-    videoId: 'dQw4w9WgXcQ',
+    videoId: 'wDBzSHyfpzA',
     features: ['Brick Construction', 'Garage Transformation', 'Self-Contained', 'Modern Finishes', 'Space Efficient'],
     detailedSpecs: {
       "Foundation": "Existing structure reinforcement",
@@ -211,7 +211,7 @@ export const builderTypes = [
     price: 'From $280,000',
     gallery: [secondHero, secondOverview, bathroomRenoImg, kitchenRenoImg, homeRenoImg, deckingImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
-    videoId: 'dQw4w9WgXcQ',
+    videoId: 'EO69qNSB0Ow',
     features: ['Dual Occupancy', 'Rental Ready', 'Private Entry', 'Full Kitchen', 'NBN Connected'],
     detailedSpecs: {
       "Type": "Detached self-contained unit",
@@ -239,7 +239,7 @@ export const builderTypes = [
     price: 'From $120,000',
     gallery: [grannyHero, grannyOverview, grannyBedroom, laundryRenoImg, bathroomRenoImg, kitchenRenoImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
-    videoId: 'dQw4w9WgXcQ',
+    videoId: 'hlaiUTJqi7A',
     features: ['CDC Approved', 'Backyard Build', 'Quality Finishes', 'Separate Metering', 'Quick Build'],
     detailedSpecs: {
       "Approval": "Streamlined CDC pathway",
