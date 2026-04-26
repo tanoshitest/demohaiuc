@@ -7,12 +7,19 @@ import laundryRenoImg from '@/assets/laundry-reno.jpg';
 import pergolaImg from '@/assets/pergola.jpg';
 
 // Builder Types
-import builderHouseImg from '@/assets/builder-house.jpg';
-import builderCustomImg from '@/assets/builder-custom.jpg';
-import builderTownhouseImg from '@/assets/builder-townhouse.jpg';
-import builderBungalowImg from '@/assets/builder-bungalow.jpg';
-import builderSecondImg from '@/assets/builder-second.jpg';
-import builderGrannyImg from '@/assets/builder-granny.jpg';
+import houseHero from '@/assets/house-hero.png';
+import houseOverview from '@/assets/house-overview.png';
+import customHero from '@/assets/custom-hero.png';
+import customOverview from '@/assets/custom-overview.png';
+import townhouseHero from '@/assets/townhouse-hero.png';
+import townhouseOverview from '@/assets/townhouse-overview.png';
+import bungalowHero from '@/assets/bungalow-hero.png';
+import bungalowOverview from '@/assets/bungalow-overview.png';
+import secondHero from '@/assets/second-hero.png';
+import secondOverview from '@/assets/second-overview.png';
+import grannyHero from '@/assets/granny-hero.png';
+import grannyOverview from '@/assets/granny-overview.png';
+import grannyBedroom from '@/assets/granny-bedroom.png';
 import floorPlanImg from '@/assets/floor-plan.jpg';
 
 // Projects
@@ -83,80 +90,170 @@ export const builderTypes = [
   {
     id: 'house',
     name: 'House',
-    description: 'Our signature family homes are designed for modern Australian living. Featuring open-plan layouts, seamless indoor-outdoor flow, and premium finishes throughout. Perfect for growing families seeking quality and comfort in established suburbs.',
-    image: builderHouseImg,
+    description: 'Our signature family homes are designed for modern Australian living. Featuring open-plan layouts, seamless indoor-outdoor flow, and premium finishes throughout.',
+    longDescription: 'Our signature House model is a testament to modern Australian family living. This design prioritizes space, light, and functionality, featuring a sprawling open-plan living area that acts as the heart of the home. With high-end timber cladding and sleek white render, the exterior exudes contemporary elegance. Inside, you\'ll find a chef-inspired kitchen with premium stone benchtops, a dedicated master suite with a walk-in robe, and versatile secondary bedrooms. Every detail has been meticulously crafted to provide a harmonious environment for your family to grow and thrive for generations.',
+    image: houseHero,
+    overviewImage: houseOverview,
     specs: { beds: 4, baths: 2, cars: 2 },
     size: '220-280 sqm',
     price: 'From $650,000',
-    gallery: [builderHouseImg, homeRenoImg, kitchenRenoImg, bathroomRenoImg],
+    gallery: [houseHero, houseOverview, homeRenoImg, kitchenRenoImg, bathroomRenoImg, laundryRenoImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
     videoId: 'dQw4w9WgXcQ',
     features: ['Open Plan Living', 'Alfresco Area', 'Walk-in Pantry', 'Master Ensuite', 'Double Garage'],
+    detailedSpecs: {
+      "Structure": "Reinforced concrete slab, timber frame",
+      "Exterior": "Premium brickwork with render accents",
+      "Roofing": "Colorbond® steel roofing",
+      "Interior": "2.7m high ceilings, LED downlights throughout",
+      "Energy": "6-star energy rating minimum"
+    },
+    process: [
+      { title: "Consultation", description: "Initial meeting to discuss your vision and budget." },
+      { title: "Design & Planning", description: "Finalizing layouts and obtaining necessary permits." },
+      { title: "Construction", description: "Our expert team brings your home to life with quality craftsmanship." },
+      { title: "Handover", description: "Final inspection and handing over the keys to your dream home." }
+    ]
   },
   {
     id: 'custom-house',
     name: 'Custom House',
-    description: 'Your vision, our expertise. Our custom home service delivers architect-designed residences tailored to your exact requirements. From contemporary masterpieces to coastal retreats, we bring your dream home to life.',
-    image: builderCustomImg,
+    description: 'Your vision, our expertise. Our custom home service delivers architect-designed residences tailored to your exact requirements.',
+    longDescription: 'The Custom House model represents the ultimate in bespoke residential luxury. Designed for those who seek a unique statement home, this model features avant-garde architecture with sharp geometric lines and a sophisticated mix of natural stone, glass, and steel. The expansive floor-to-ceiling windows create a seamless connection with the outdoors, highlighting a custom infinity pool and professional landscaping. Internally, the home offers a double-height living room, a sculptural feature staircase, and a state-of-the-art home automation system. This is not just a house; it\'s a masterpiece tailored to your specific lifestyle.',
+    image: customHero,
+    overviewImage: customOverview,
     specs: { beds: 5, baths: 3, cars: 3 },
     size: '300-450 sqm',
     price: 'From $950,000',
-    gallery: [builderCustomImg, projectMosmanImg, projectBondiImg, kitchenRenoImg],
+    gallery: [customHero, customOverview, projectMosmanImg, projectBondiImg, kitchenRenoImg, bathroomRenoImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
     videoId: 'dQw4w9WgXcQ',
     features: ['Architect Designed', 'Premium Finishes', 'Home Automation', 'Pool Integration', 'Wine Cellar'],
+    detailedSpecs: {
+      "Design": "Full architectural service included",
+      "Materials": "Custom selected premium finishes",
+      "Technology": "Integrated smart home systems",
+      "Sustainability": "Solar ready, high-performance glazing",
+      "Landscape": "Custom pool and garden design"
+    },
+    process: [
+      { title: "Architectural Brief", description: "Detailed discovery session with our design team." },
+      { title: "Bespoke Design", description: "Iterative design process to perfect your vision." },
+      { title: "Premium Build", description: "Meticulous construction using high-end materials." },
+      { title: "Elite Handover", description: "Personalized walkthrough and system orientation." }
+    ]
   },
   {
     id: 'townhouse',
     name: 'Town House',
-    description: 'Smart urban living with our contemporary townhouse designs. Three-storey layouts maximise space on compact blocks, perfect for inner-city locations where lifestyle meets convenience.',
-    image: builderTownhouseImg,
+    description: 'Smart urban living with our contemporary townhouse designs. Multi-storey layouts maximise space on compact blocks.',
+    longDescription: 'Our Townhouse design is the perfect solution for premium urban living. By utilizing vertical space across three intelligently planned levels, we offer a spacious home on a compact footprint. The exterior features striking black steel accents and vertical timber battens, reflecting a modern industrial aesthetic. The crowning jewel is the private rooftop terrace, offering panoramic views of the city skyline—ideal for entertaining or peaceful relaxation. Inside, you\'ll find clever storage solutions, a bright study nook, and high-end European appliances, making it the ideal retreat for professionals and modern families.',
+    image: townhouseHero,
+    overviewImage: townhouseOverview,
     specs: { beds: 3, baths: 2, cars: 1 },
     size: '150-200 sqm',
     price: 'From $450,000',
-    gallery: [builderTownhouseImg, bathroomRenoImg, kitchenRenoImg, homeRenoImg],
+    gallery: [townhouseHero, townhouseOverview, bathroomRenoImg, homeRenoImg, kitchenRenoImg, laundryRenoImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
     videoId: 'dQw4w9WgXcQ',
     features: ['Multi-Level Living', 'Rooftop Terrace', 'Study Nook', 'Private Courtyard', 'Secure Parking'],
+    detailedSpecs: {
+      "Layout": "Optimized multi-level design",
+      "Exterior": "Modern mixed-material facade",
+      "Windows": "Double-glazed for acoustic insulation",
+      "Kitchen": "European appliances and stone tops",
+      "Space": "Clever built-in storage solutions"
+    },
+    process: [
+      { title: "Urban Analysis", description: "Optimizing the layout for your specific urban block." },
+      { title: "Compliance", description: "Managing multi-dwelling approvals and permits." },
+      { title: "Precision Build", description: "Efficient construction focused on modern urban standards." },
+      { title: "Final Walkthrough", description: "Ensuring every detail of your urban retreat is perfect." }
+    ]
   },
   {
     id: 'bungalow',
     name: 'Bungalow',
-    description: 'Classic Australian character meets modern convenience. Our bungalow designs honour traditional aesthetics while incorporating contemporary layouts and energy-efficient features.',
-    image: builderBungalowImg,
+    description: 'Transform your existing brick garage into a stylish, fully-functional living space. Our bungalow conversions maximize your property\'s footprint.',
+    longDescription: 'The Bungalow model is our premier solution for transforming existing brick garages into luxury, fully-functional living spaces. We specialize in preserving the original character of your brick outbuilding while introducing a high-end, industrial-chic aesthetic. By replacing traditional garage doors with expansive, black-framed glass sliding doors, we flood the space with natural light. The interior layout is meticulously planned to include a stylish living area, integrated kitchenette, and a private bedroom, making it the perfect self-contained sanctuary for guests or a professional creative studio.',
+    image: bungalowHero,
+    overviewImage: bungalowOverview,
     specs: { beds: 3, baths: 1, cars: 1 },
     size: '120-180 sqm',
     price: 'From $380,000',
-    gallery: [builderBungalowImg, homeRenoImg, laundryRenoImg, kitchenRenoImg],
+    gallery: [bungalowHero, bungalowOverview, homeRenoImg, laundryRenoImg, kitchenRenoImg, pergolaImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
     videoId: 'dQw4w9WgXcQ',
-    features: ['Wide Verandah', 'High Ceilings', 'Timber Features', 'Period Detailing', 'Energy Efficient'],
+    features: ['Brick Construction', 'Garage Transformation', 'Self-Contained', 'Modern Finishes', 'Space Efficient'],
+    detailedSpecs: {
+      "Foundation": "Existing structure reinforcement",
+      "Walls": "Insulated internal framing on brick",
+      "Joinery": "Custom cabinetry to maximize space",
+      "Plumbing": "Full integration for kitchen/bath",
+      "Aesthetics": "Seamless blend with main house"
+    },
+    process: [
+      { title: "Structural Audit", description: "Assessing your existing garage for conversion viability." },
+      { title: "Design Adaptation", description: "Transforming a utility space into a living sanctuary." },
+      { title: "Conversion Build", description: "Efficient interior fit-out and structural upgrades." },
+      { title: "Certification", description: "Ensuring all conversion work meets building codes." }
+    ]
   },
   {
     id: 'second-home',
     name: 'Second Homes',
-    description: 'Maximise your property\'s potential with a detached second dwelling. Ideal for rental income, multigenerational living, or a private home office. Fully self-contained with premium finishes.',
-    image: builderSecondImg,
+    description: 'Maximise your property\'s potential with a detached second dwelling. Ideal for rental income or multigenerational living.',
+    longDescription: 'Maximise your property\'s potential with our detached Second Home model. This design follows a Scandinavian minimalist philosophy, using light timber cladding and large windows to create a bright, inviting sanctuary. Perfect for multi-generational living or as a high-yield rental investment, this fully self-contained dwelling offers a compact yet luxurious kitchen and living area. The layout is optimized for privacy and efficiency, ensuring it complements your main residence while providing a completely independent living experience in a lush garden setting.',
+    image: secondHero,
+    overviewImage: secondOverview,
     specs: { beds: 2, baths: 1, cars: 1 },
     size: '80-120 sqm',
     price: 'From $280,000',
-    gallery: [builderSecondImg, bathroomRenoImg, kitchenRenoImg, homeRenoImg],
+    gallery: [secondHero, secondOverview, bathroomRenoImg, kitchenRenoImg, homeRenoImg, deckingImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
     videoId: 'dQw4w9WgXcQ',
     features: ['Dual Occupancy', 'Rental Ready', 'Private Entry', 'Full Kitchen', 'NBN Connected'],
+    detailedSpecs: {
+      "Type": "Detached self-contained unit",
+      "Privacy": "Strategic placement and acoustic design",
+      "Services": "Independent utility connections",
+      "Finish": "Full residential-grade specifications",
+      "Deck": "Optional integrated alfresco deck"
+    },
+    process: [
+      { title: "Site Strategy", description: "Determining the best position for privacy and access." },
+      { title: "Dual Approval", description: "Handling dual-occupancy council requirements." },
+      { title: "Turnkey Build", description: "Full construction including all services and finishes." },
+      { title: "Rental Ready", description: "Final preparation for living or leasing." }
+    ]
   },
   {
     id: 'granny-flat',
     name: 'Granny Flat',
-    description: 'Compliant secondary dwellings designed for comfort and independence. Our granny flats provide complete living solutions with quality finishes, perfect for extended family or rental income.',
-    image: builderGrannyImg,
+    description: 'A compact, self-contained secondary dwelling built in the backyard. Ideal for large blocks with a main house at the front.',
+    longDescription: 'Our modern Granny Flat model is the perfect \'backyard addition\' for large residential blocks. Designed to sit comfortably behind your main residence, this self-contained secondary dwelling maximizes the potential of your property\'s garden space. The design focuses on privacy and independence, featuring a private timber deck and large windows that overlook your lush backyard. Whether it\'s for aging parents, independent teenagers, or as a rental investment, our Granny Flats provide a seamless, high-quality extension to your home that feels like a natural part of the landscape.',
+    image: grannyHero,
+    overviewImage: grannyOverview,
     specs: { beds: 1, baths: 1, cars: 0 },
     size: '40-60 sqm',
     price: 'From $120,000',
-    gallery: [builderGrannyImg, laundryRenoImg, bathroomRenoImg, kitchenRenoImg],
+    gallery: [grannyHero, grannyOverview, grannyBedroom, laundryRenoImg, bathroomRenoImg, kitchenRenoImg],
     floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
     videoId: 'dQw4w9WgXcQ',
-    features: ['CDC Approved', 'Compact Living', 'Quality Finishes', 'Separate Metering', 'Quick Build'],
+    features: ['CDC Approved', 'Backyard Build', 'Quality Finishes', 'Separate Metering', 'Quick Build'],
+    detailedSpecs: {
+      "Approval": "Streamlined CDC pathway",
+      "Footprint": "Compact space-saving design",
+      "Materials": "Low-maintenance exterior finishes",
+      "Kitchenette": "Full functional kitchen included",
+      "Accessibility": "Optional aging-in-place features"
+    },
+    process: [
+      { title: "CDC Check", description: "Confirming your block meets fast-track criteria." },
+      { title: "Compact Design", description: "Selecting the perfect layout for your backyard." },
+      { title: "Rapid Build", description: "Minimizing disruption to your main residence." },
+      { title: "Move In", description: "A quick transition to your new backyard home." }
+    ]
   },
 ];
 
@@ -219,8 +316,8 @@ export const projects = [
     location: 'Brighton, VIC',
     category: 'New Build',
     description: 'A stunning beachside residence designed to capture bay views from every room. Features include floor-to-ceiling windows, a infinity pool, and sustainable building materials.',
-    image: builderHouseImg,
-    gallery: [builderHouseImg, kitchenRenoImg, bathroomRenoImg, deckingImg, homeRenoImg, pergolaImg],
+    image: houseHero,
+    gallery: [houseHero, kitchenRenoImg, bathroomRenoImg, deckingImg, homeRenoImg, pergolaImg],
     year: 2024,
     duration: '16 months',
     scope: ['New home construction', 'Pool installation', 'Landscaping', 'Smart home integration'],
@@ -258,8 +355,8 @@ export const projects = [
     location: 'Paddington, NSW',
     category: 'Full Home Renovation',
     description: 'Complete gut renovation of a three-storey townhouse, creating a modern family home with seamless indoor-outdoor living and a private courtyard.',
-    image: builderTownhouseImg,
-    gallery: [builderTownhouseImg, kitchenRenoImg, bathroomRenoImg, homeRenoImg, laundryRenoImg, deckingImg],
+    image: townhouseHero,
+    gallery: [townhouseHero, kitchenRenoImg, bathroomRenoImg, homeRenoImg, laundryRenoImg, deckingImg],
     year: 2024,
     duration: '9 months',
     scope: ['Full interior demolition', 'Structural changes', 'New kitchen and bathrooms', 'Courtyard design'],
@@ -271,8 +368,8 @@ export const projects = [
     location: 'South Yarra, VIC',
     category: 'Apartment Renovation',
     description: 'High-end penthouse renovation featuring bespoke joinery, premium finishes, and stunning city views. A sophisticated urban retreat with attention to every detail.',
-    image: builderCustomImg,
-    gallery: [builderCustomImg, kitchenRenoImg, bathroomRenoImg, laundryRenoImg, homeRenoImg, deckingImg],
+    image: customHero,
+    gallery: [customHero, kitchenRenoImg, bathroomRenoImg, laundryRenoImg, homeRenoImg, deckingImg],
     year: 2023,
     duration: '6 months',
     scope: ['Full interior fit-out', 'Custom joinery', 'Premium finishes', 'Smart home automation'],

@@ -5,6 +5,7 @@ import AboutCertifications from '@/components/AboutCertifications';
 import AboutProcess from '@/components/AboutProcess';
 import AboutWhyChooseUs from '@/components/AboutWhyChooseUs';
 import AboutAwards from '@/components/AboutAwards';
+import { aboutTeamImage } from '@/data/siteData';
 import Footer from '@/components/Footer';
 
 const AboutPage = () => {
@@ -12,7 +13,11 @@ const AboutPage = () => {
     <div className="min-h-screen">
       <Header />
       <main>
-        <PageBanner />
+        <PageBanner 
+          title="About Triple J Homes" 
+          description="Building Excellence Since 2000. Discover our journey, our team, and our commitment to quality craftsmanship across Australia."
+          image={aboutTeamImage}
+        />
         <About />
         <AboutCertifications />
         <AboutProcess />
