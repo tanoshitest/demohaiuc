@@ -40,40 +40,40 @@ const BuilderDetailPage = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
           
-          <div className="absolute inset-0 flex flex-col justify-end pb-12">
+          <div className="absolute inset-0 flex flex-col justify-end pb-8 md:pb-12">
             <div className="container-custom">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
                 <Link
                   to="/builder-models"
-                  className="inline-flex items-center text-white/80 hover:text-accent transition-colors mb-6 group"
+                  className="inline-flex items-center text-white/80 hover:text-accent transition-colors mb-4 md:mb-6 group"
                 >
                   <ChevronLeft className="w-5 h-5 mr-1 group-hover:-translate-x-1 transition-transform" />
                   Back to All Models
                 </Link>
-                <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 leading-tight">
+                <h1 className="text-3xl md:text-6xl font-heading font-bold text-white mb-4 md:mb-6 leading-tight">
                   {builder.name}
                 </h1>
                 
-                <div className="flex flex-wrap items-center gap-8 text-white/90">
-                  <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl">
-                    <Bed className="w-5 h-5 text-accent" />
-                    <span className="font-medium">{builder.specs.beds} Bedrooms</span>
+                <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-3 md:gap-8 text-white/90">
+                  <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md px-3 md:px-4 py-2 rounded-xl border border-white/10">
+                    <Bed className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+                    <span className="font-medium text-sm md:text-base">{builder.specs.beds} Beds</span>
                   </div>
-                  <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl">
-                    <BathIcon className="w-5 h-5 text-accent" />
-                    <span className="font-medium">{builder.specs.baths} Bathrooms</span>
+                  <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md px-3 md:px-4 py-2 rounded-xl border border-white/10">
+                    <BathIcon className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+                    <span className="font-medium text-sm md:text-base">{builder.specs.baths} Baths</span>
                   </div>
-                  <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl">
-                    <Car className="w-5 h-5 text-accent" />
-                    <span className="font-medium">{builder.specs.cars} Car Garage</span>
+                  <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md px-3 md:px-4 py-2 rounded-xl border border-white/10">
+                    <Car className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+                    <span className="font-medium text-sm md:text-base">{builder.specs.cars} Cars</span>
                   </div>
-                  <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl">
-                    <Ruler className="w-5 h-5 text-accent" />
-                    <span className="font-medium">{builder.size}</span>
+                  <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-md px-3 md:px-4 py-2 rounded-xl border border-white/10 col-span-2 sm:col-span-1">
+                    <Ruler className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+                    <span className="font-medium text-sm md:text-base">{builder.size}</span>
                   </div>
                 </div>
               </motion.div>
@@ -86,28 +86,28 @@ const BuilderDetailPage = () => {
             {/* Main Content Area */}
             <div className="lg:col-span-8">
               <Tabs defaultValue="overview" className="w-full">
-                <TabsList className="w-full justify-start border-b rounded-none bg-transparent h-auto p-0 mb-8 overflow-x-auto">
+                <TabsList className="w-full justify-start border-b rounded-none bg-transparent h-auto p-0 mb-8 overflow-x-auto flex-nowrap scrollbar-hide">
                   <TabsTrigger 
                     value="overview" 
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-accent data-[state=active]:bg-transparent px-8 py-4 text-lg font-semibold transition-all"
+                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-accent data-[state=active]:bg-transparent px-4 md:px-8 py-4 text-base md:text-lg font-semibold transition-all whitespace-nowrap"
                   >
                     Overview
                   </TabsTrigger>
                   <TabsTrigger 
                     value="floorplans" 
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-accent data-[state=active]:bg-transparent px-8 py-4 text-lg font-semibold transition-all"
+                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-accent data-[state=active]:bg-transparent px-4 md:px-8 py-4 text-base md:text-lg font-semibold transition-all whitespace-nowrap"
                   >
                     Floor Plans
                   </TabsTrigger>
                   <TabsTrigger 
                     value="gallery" 
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-accent data-[state=active]:bg-transparent px-8 py-4 text-lg font-semibold transition-all"
+                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-accent data-[state=active]:bg-transparent px-4 md:px-8 py-4 text-base md:text-lg font-semibold transition-all whitespace-nowrap"
                   >
                     Gallery
                   </TabsTrigger>
                   <TabsTrigger 
                     value="specs" 
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-accent data-[state=active]:bg-transparent px-8 py-4 text-lg font-semibold transition-all"
+                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-accent data-[state=active]:bg-transparent px-4 md:px-8 py-4 text-base md:text-lg font-semibold transition-all whitespace-nowrap"
                   >
                     Specifications
                   </TabsTrigger>
@@ -187,37 +187,66 @@ const BuilderDetailPage = () => {
                 </TabsContent>
 
                 {/* Floor Plans Tab */}
-                <TabsContent value="floorplans" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-3xl font-heading font-bold text-foreground">Layout & Floor Plans</h2>
-                    <Button variant="outline" className="gap-2">
+                <TabsContent value="floorplans" className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                      <h2 className="text-3xl font-heading font-bold text-foreground">Layout & Floor Plans</h2>
+                      <p className="text-muted-foreground mt-2">Architecturally designed for optimal space utilization and flow.</p>
+                    </div>
+                    <Button variant="outline" className="gap-2 self-start md:self-center border-accent text-accent hover:bg-accent/5 hover:text-accent-foreground h-12 px-6 rounded-xl">
                       <Download className="w-4 h-4" />
-                      Download PDF
+                      Download PDF Brochure
                     </Button>
                   </div>
-                  <div className="grid gap-8">
+
+                  <div className="space-y-12">
                     {builder.floorPlans.map((plan, idx) => (
-                      <Card key={idx} className="overflow-hidden border-none shadow-custom-lg bg-card/50 backdrop-blur-sm">
-                        <CardContent className="p-0">
-                          <div className="relative group cursor-zoom-in">
-                            <img
+                      <div key={idx} className="group">
+                        <div className="relative bg-white rounded-[2rem] p-4 md:p-8 shadow-custom-lg border border-border/50 overflow-hidden">
+                          <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                            <Badge className="bg-accent text-accent-foreground text-sm py-1 px-4">Standard Layout</Badge>
+                          </div>
+                          
+                          <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden rounded-2xl bg-secondary/20">
+                            <motion.img
+                              whileHover={{ scale: 1.02 }}
+                              transition={{ duration: 0.5 }}
                               src={plan}
                               alt={`${builder.name} Floor Plan ${idx + 1}`}
-                              className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                              className="w-full h-full object-contain mix-blend-multiply"
                             />
-                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                              <div className="bg-white text-black px-6 py-3 rounded-full font-bold flex items-center gap-2">
-                                <Maximize2 className="w-5 h-5" />
-                                View Full Size
+                            
+                            <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                              <div className="bg-white/90 backdrop-blur-sm text-foreground px-6 py-3 rounded-full font-bold flex items-center gap-2 shadow-xl">
+                                <Maximize2 className="w-5 h-5 text-accent" />
+                                Click to Expand
                               </div>
                             </div>
                           </div>
-                          <div className="p-6">
-                            <h3 className="text-xl font-bold mb-2">Ground Floor Layout</h3>
-                            <p className="text-muted-foreground">Detailed view of the living, kitchen, and dining areas designed for maximum flow and utility.</p>
+
+                          <div className="mt-8 grid md:grid-cols-2 gap-8 border-t pt-8">
+                            <div>
+                              <h3 className="text-2xl font-bold mb-3 flex items-center gap-3">
+                                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-accent text-accent-foreground text-sm">1</span>
+                                Ground Floor Concept
+                              </h3>
+                              <p className="text-muted-foreground leading-relaxed">
+                                Our open-plan ground floor maximizes natural light and creates a seamless transition between indoor and outdoor living spaces.
+                              </p>
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                              <div className="bg-secondary/30 p-4 rounded-2xl">
+                                <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-1">Living Area</span>
+                                <span className="text-lg font-bold">Spacious & Airy</span>
+                              </div>
+                              <div className="bg-secondary/30 p-4 rounded-2xl">
+                                <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-1">Kitchen</span>
+                                <span className="text-lg font-bold">Gourmet Chef Style</span>
+                              </div>
+                            </div>
                           </div>
-                        </CardContent>
-                      </Card>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </TabsContent>

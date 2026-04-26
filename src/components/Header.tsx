@@ -134,41 +134,61 @@ export default function Header() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-card rounded-lg shadow-custom-xl mt-2 overflow-hidden"
+              initial={{ opacity: 0, scale: 0.95, y: -20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -20 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="lg:hidden absolute top-20 left-0 right-0 bg-card/98 backdrop-blur-xl shadow-2xl border-b border-border overflow-hidden"
             >
-              <div className="p-4 space-y-4">
-                {navLinks.map((link) => (
-                  <Link
+              <div className="container-custom py-8 space-y-2">
+                {navLinks.map((link, idx) => (
+                  <motion.div
                     key={link.name}
-                    to={link.href}
-                    className={`block font-medium py-2 transition-colors ${
-                      isActiveLink(link.href)
-                        ? 'text-accent'
-                        : 'text-foreground hover:text-accent'
-                    }`}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
                   >
-                    {link.name}
-                  </Link>
+                    <Link
+                      to={link.href}
+                      className={`block font-heading font-bold text-2xl py-3 transition-colors ${
+                        isActiveLink(link.href)
+                          ? 'text-accent'
+                          : 'text-foreground hover:text-accent'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 ))}
-                <div className="pt-4 border-t border-border space-y-3">
+                
+                <motion.div 
+                  className="pt-8 mt-6 border-t border-border grid grid-cols-1 sm:grid-cols-2 gap-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
                   <Button
                     asChild
-                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                    size="lg"
+                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-16 rounded-2xl text-lg font-bold"
                   >
                     <a href={`tel:${companyInfo.phone}`}>
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call
+                      <Phone className="w-5 h-5 mr-2" />
+                      Call Us Now
                     </a>
                   </Button>
                   <Button
                     asChild
-                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-accent text-accent hover:bg-accent/5 h-16 rounded-2xl text-lg font-bold"
                   >
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/contact">Get a Quote</Link>
                   </Button>
+                </motion.div>
+                
+                <div className="pt-8 text-center text-muted-foreground text-sm">
+                  <p>© 2024 {companyInfo.name}. All rights reserved.</p>
                 </div>
               </div>
             </motion.div>

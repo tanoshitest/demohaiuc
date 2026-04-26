@@ -20,7 +20,12 @@ import secondOverview from '@/assets/second-overview.png';
 import grannyHero from '@/assets/granny-hero.png';
 import grannyOverview from '@/assets/granny-overview.png';
 import grannyBedroom from '@/assets/granny-bedroom.png';
-import floorPlanImg from '@/assets/floor-plan.jpg';
+import housePlan from '@/assets/house-plan.png';
+import customPlan from '@/assets/custom-plan.png';
+import townhousePlan from '@/assets/townhouse-plan.png';
+import bungalowPlan from '@/assets/bungalow-plan.png';
+import secondPlan from '@/assets/second-plan.png';
+import grannyPlan from '@/assets/granny-plan.png';
 
 // Projects
 import projectBondiImg from '@/assets/project-bondi.jpg';
@@ -98,7 +103,7 @@ export const builderTypes = [
     size: '220-280 sqm',
     price: 'From $650,000',
     gallery: [houseHero, houseOverview, homeRenoImg, kitchenRenoImg, bathroomRenoImg, laundryRenoImg],
-    floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
+    floorPlans: [housePlan],
     videoId: 'Kx2fQFA6uis',
     features: ['Open Plan Living', 'Alfresco Area', 'Walk-in Pantry', 'Master Ensuite', 'Double Garage'],
     detailedSpecs: {
@@ -126,7 +131,7 @@ export const builderTypes = [
     size: '300-450 sqm',
     price: 'From $950,000',
     gallery: [customHero, customOverview, projectMosmanImg, projectBondiImg, kitchenRenoImg, bathroomRenoImg],
-    floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
+    floorPlans: [customPlan],
     videoId: '4fYBLzn9aM4',
     features: ['Architect Designed', 'Premium Finishes', 'Home Automation', 'Pool Integration', 'Wine Cellar'],
     detailedSpecs: {
@@ -154,7 +159,7 @@ export const builderTypes = [
     size: '150-200 sqm',
     price: 'From $450,000',
     gallery: [townhouseHero, townhouseOverview, bathroomRenoImg, homeRenoImg, kitchenRenoImg, laundryRenoImg],
-    floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
+    floorPlans: [townhousePlan],
     videoId: '8Fr9a7MDHOU',
     features: ['Multi-Level Living', 'Rooftop Terrace', 'Study Nook', 'Private Courtyard', 'Secure Parking'],
     detailedSpecs: {
@@ -182,7 +187,7 @@ export const builderTypes = [
     size: '120-180 sqm',
     price: 'From $380,000',
     gallery: [bungalowHero, bungalowOverview, homeRenoImg, laundryRenoImg, kitchenRenoImg, pergolaImg],
-    floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
+    floorPlans: [bungalowPlan],
     videoId: 'wDBzSHyfpzA',
     features: ['Brick Construction', 'Garage Transformation', 'Self-Contained', 'Modern Finishes', 'Space Efficient'],
     detailedSpecs: {
@@ -210,7 +215,7 @@ export const builderTypes = [
     size: '80-120 sqm',
     price: 'From $280,000',
     gallery: [secondHero, secondOverview, bathroomRenoImg, kitchenRenoImg, homeRenoImg, deckingImg],
-    floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
+    floorPlans: [secondPlan],
     videoId: 'EO69qNSB0Ow',
     features: ['Dual Occupancy', 'Rental Ready', 'Private Entry', 'Full Kitchen', 'NBN Connected'],
     detailedSpecs: {
@@ -238,7 +243,7 @@ export const builderTypes = [
     size: '40-60 sqm',
     price: 'From $120,000',
     gallery: [grannyHero, grannyOverview, grannyBedroom, laundryRenoImg, bathroomRenoImg, kitchenRenoImg],
-    floorPlans: [floorPlanImg, floorPlanImg, floorPlanImg],
+    floorPlans: [grannyPlan],
     videoId: 'hlaiUTJqi7A',
     features: ['CDC Approved', 'Backyard Build', 'Quality Finishes', 'Separate Metering', 'Quick Build'],
     detailedSpecs: {
