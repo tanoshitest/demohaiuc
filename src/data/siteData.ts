@@ -38,7 +38,7 @@ import blogPermitsImg from '@/assets/blog-permits.jpg';
 import blogSustainableImg from '@/assets/blog-sustainable.jpg';
 
 // About
-import aboutTeamImg from '@/assets/about-team.jpg';
+import aboutTeamImg from '@/assets/about-team-australian.png';
 
 export const services = [
   {
